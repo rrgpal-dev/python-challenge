@@ -27,12 +27,14 @@ avg_month_val = sum(monthly_change)/len(monthly_change)
 Great_increase = max(monthly_change)
 Great_month_idx = monthly_change.index(Great_increase)
 Great_month = month[Great_month_idx]
+Great_Decrease = min(monthly_change)
+Great_month_idx = monthly_change.index(Great_Decrease)
+Low_month = month[Great_month_idx]
 
 print("Financial Analysis")
 print("---------------------------------------------")
 print(f"Total Months: {num_of_months}") 
 print(f"Total: ${sum(monthly_amt)}")
 print(f"Average Change:$ {avg_month_val}")
-print(Great_month)
-        
-        
+print(f"Greatest Increase in Profits: {Great_month}, ${Great_increase}")
+print(f"Greatest Decrease in Profits: {Low_month}, ${Great_Decrease}")       

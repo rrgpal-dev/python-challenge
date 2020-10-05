@@ -16,7 +16,7 @@ with open ("election_data.csv") as f:
         monthly_change.append(float(s[1]) - previous_mth_amt)
         previous_mth_amt = float(s[1])
  
-    print("Election Results")
-    print("-----------------------------------")
-    print(f"Total Votes:  {num_of_votes}")
-    print("-----------------------------------")
+print("Election Results")
+print("-----------------------------------")
+print(f"Total Votes:  {num_of_votes}")
+print("-----------------------------------")

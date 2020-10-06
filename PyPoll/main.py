@@ -5,21 +5,14 @@ Created on Mon Oct  5 15:52:53 2020
 
 @author: N457149 - Raj Ramachandran
 """
+import statistics
+from statistics import mode 
 
 def percal(val1,val2):
     return val2*100/val1
 
-def most_frequent(List): 
-    counter = 0
-    num = List[0] 
-      
-    for i in List: 
-        curr_frequency = List.count(i) 
-        if(curr_frequency> counter): 
-            counter = curr_frequency 
-            num = i 
-  
-    return num 
+def most_common(List): 
+    return(mode(List)) 
 
 i = 0
 num_of_voters = 0
@@ -67,7 +60,7 @@ print(f"Li: {percal(Total_count,li_cnt)} % , {li_cnt}")
 print(f"O'Tooley': {percal(Total_count,tooley_cnt)} % , {tooley_cnt}")
 print("-----------------------------------")
 
-print(f"Winner is: {most_frequent(li_can)}")
+print(f"Winner is: {most_common(li_can)}")
 
 print("-----------------------------------")
 

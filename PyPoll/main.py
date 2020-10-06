@@ -8,11 +8,16 @@ Created on Mon Oct  5 15:52:53 2020
 import statistics
 from statistics import mode 
 
+
 def percal(val1,val2):
     return "{:10.3f}".format(val2*100/val1)
 
 def most_common(List): 
     return(mode(List)) 
+
+def write_file_line(s,f):
+    f.write(s)
+    f.write("\n")
 
 i = 0
 num_of_voters = 0
@@ -57,4 +62,16 @@ print("-----------------------------------")
 print(f"Winner is: {most_common(li_can)}")
 print("-----------------------------------")
 
-
+f = open("log.txt", "w")
+write_file_line("Election Results",f)
+write_file_line("-----------------------------------",f)
+write_file_line(f"Total Votes:  {num_of_voters}",f)
+write_file_line("-----------------------------------",f)
+write_file_line(f"Khan: {percal(Total_count,khan_cnt)} % , {khan_cnt}",f)
+write_file_line(f"Correy: {percal(Total_count,correy_cnt)} % , {correy_cnt}",f)
+write_file_line(f"Li: {percal(Total_count,li_cnt)} % , {li_cnt}",f)
+write_file_line(f"O'Tooley': {percal(Total_count,tooley_cnt)} % , {tooley_cnt}",f)
+write_file_line("-----------------------------------",f)
+write_file_line(f"Winner is: {most_common(li_can)}",f)
+write_file_line("-----------------------------------",f)
+f.close()

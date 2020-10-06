@@ -9,7 +9,7 @@ import statistics
 from statistics import mode 
 
 def percal(val1,val2):
-    return val2*100/val1
+    return "{:10.3f}".format(val2*100/val1)
 
 def most_common(List): 
     return(mode(List)) 
@@ -43,13 +43,8 @@ with open ("election_data.csv") as f:
             
 Total_count = khan_cnt+correy_cnt+li_cnt+tooley_cnt   
 perval =   percal(Total_count,khan_cnt)
-print(perval)
-            
-"""    month.append(s[0])
-        monthly_amt.append(float(s[1]))
-        monthly_change.append(float(s[1]) - previous_mth_amt)
-        previous_mth_amt = float(s[1])
-""" 
+
+
 print("Election Results")
 print("-----------------------------------")
 print(f"Total Votes:  {num_of_voters}")
@@ -59,9 +54,7 @@ print(f"Correy: {percal(Total_count,correy_cnt)} % , {correy_cnt}")
 print(f"Li: {percal(Total_count,li_cnt)} % , {li_cnt}")
 print(f"O'Tooley': {percal(Total_count,tooley_cnt)} % , {tooley_cnt}")
 print("-----------------------------------")
-
 print(f"Winner is: {most_common(li_can)}")
-
 print("-----------------------------------")
 
 
